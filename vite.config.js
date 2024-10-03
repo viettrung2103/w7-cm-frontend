@@ -10,7 +10,11 @@ export default defineConfig({
     proxy: {
       "/api": {
         // target: "https://backend-auth-cm3.onrender.com",
-        target: "https://w7-cm-backend-no-auth.onrender.com",
+        // NO AUTH
+        // target: "https://w7-cm-backend-no-auth.onrender.com",
+        // AUTH
+        target: "https://w7-cm-backend-auth.onrender.com/",
+
         changeOrigin: true,
       },
     },
