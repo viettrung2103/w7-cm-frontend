@@ -7,7 +7,9 @@ const Home = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("/api/jobs");
+        const url = "/api/jobs";
+        console.log(url);
+        const res = await fetch(url);
         // const res = await fetch(
         //   "https://w7-cm-backend-auth.onrender.com/api/jobs/"
         // );
