@@ -6,10 +6,11 @@ const Home = () => {
 
   useEffect(() => {
     const fetchJobs = async () => {
+      const apiUrl = import.meta.env.VITE_API_URL;
       try {
-        const url = "/api/jobs";
-        console.log(url);
-        const res = await fetch(url);
+        // const url = "/api/jobs";
+        console.log(apiUrl);
+        const res = await fetch(`${apiUrl}/jobs`);
         // const res = await fetch(
         //   "https://w7-cm-backend-auth.onrender.com/api/jobs/"
         // );
