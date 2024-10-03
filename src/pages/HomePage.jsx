@@ -10,7 +10,7 @@ const Home = () => {
       try {
         // const url = "/api/jobs";
         console.log(apiUrl);
-        const res = await fetch(`${apiUrl}/jobs`);
+        const res = await fetch(`${apiUrl}/api/jobs`);
         // const res = await fetch(
         //   "https://w7-cm-backend-auth.onrender.com/api/jobs/"
         // );
