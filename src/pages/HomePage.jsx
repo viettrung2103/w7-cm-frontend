@@ -7,7 +7,10 @@ const Home = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("/api/jobs");
+        // const res = await fetch("/api/jobs");
+        const res = await fetch(
+          "https://w7-cm-backend-auth.onrender.com/api/jobs/"
+        );
         if (!res.ok) {
           throw new Error("Failed to fetch jobs");
         }
