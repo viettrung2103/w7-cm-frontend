@@ -13,7 +13,7 @@ export default defineConfig({
         // NO AUTH
         // target: "https://w7-cm-backend-no-auth.onrender.com",
         // AUTH
-        target: "https://w7-cm-backend-auth.onrender.com/",
+        target: "https://w7-cm-backend-auth.onrender.com",
 
         changeOrigin: true,
       },
