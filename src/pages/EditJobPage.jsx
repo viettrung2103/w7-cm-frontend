@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { API_URL } from "../utils/server";
 
 const EditJobPage = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const EditJobPage = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`/api/jobs/${id}`, {
+        const res = await fetch(`${API_URL}/api/jobs/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -49,7 +50,7 @@ const EditJobPage = () => {
 
   const updateJob = async (updatedJob) => {
     try {
-      const res = await fetch(`/api/jobs/${id}`, {
+      const res = await fetch(`${API_URL}/api/jobs/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

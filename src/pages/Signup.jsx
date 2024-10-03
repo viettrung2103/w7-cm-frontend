@@ -1,11 +1,12 @@
 import useField from "../hooks/useField";
 import useSignup from "../hooks/useSignup";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../utils/server";
 
 const Signup = () => {
   const navigate = useNavigate();
   const name = useField("text");
-  const userName = useField("text");  
+  const userName = useField("text");
   const password = useField("password");
   const phoneNumber = useField("text");
   const gender = useField("text");
@@ -14,7 +15,7 @@ const Signup = () => {
   const address = useField("text");
   const profilePicture = useField("text");
 
-  const { signup, error } = useSignup("/api/users/signup");
+  const { signup, error } = useSignup(`${API_URL}/api/users/signup`);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

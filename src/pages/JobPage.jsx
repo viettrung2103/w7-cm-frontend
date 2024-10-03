@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { API_URL } from "../utils/server";
 
 const JobPage = () => {
   const { id } = useParams();
   const [job, setJob] = useState(null);
-  const { isAuthenticated, user} = useAuth();
+  const { isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`/api/jobs/${id}`, {
+        const res = await fetch(`${API_URL}/api/jobs/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -32,7 +33,7 @@ const JobPage = () => {
 
   const deleteJob = async () => {
     try {
-      const res = await fetch(`/api/jobs/${id}`, {
+      const res = await fetch(`${API_URL}/api/jobs/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

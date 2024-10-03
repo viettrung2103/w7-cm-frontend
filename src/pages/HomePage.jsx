@@ -1,16 +1,17 @@
 import JobListings from "../components/JobListings";
 import { useEffect, useState } from "react";
+import { API_URL } from "../utils/server";
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = import.meta.env.VITE_API_URL;
+      // const apiUrl = import.meta.env.VITE_API_URL;
       try {
         // const url = "/api/jobs";
-        console.log(apiUrl);
-        const res = await fetch(`${apiUrl}/api/jobs`);
+        console.log(API_URL);
+        const res = await fetch(`${API_URL}/api/jobs`);
         // const res = await fetch(
         //   "https://w7-cm-backend-auth.onrender.com/api/jobs/"
         // );
